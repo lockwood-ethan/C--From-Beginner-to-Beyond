@@ -41,14 +41,28 @@ int main() {
 	//
 	// cout << "You entered: " << num3 << endl;
 	
-	cout << "Enter an integer: ";
-	cin >> num1;
+	// cout << "Enter an integer: ";
+	// cin >> num1;
+	//
+	// cout << "Enter a double: ";
+	// cin >> num3;
+	//
+	// cout << "The integer is: " << num1 << endl;
+	// cout << "And the double is: " << num3 << endl;
 
-	cout << "Enter a double: ";
-	cin >> num3;
+	std::string name;
+	int age;
 
-	cout << "The integer is: " << num1 << endl;
-	cout << "And the double is: " << num3 << endl;
+	std::cout << "What's your age?: ";
+	std::cin >> age;
+
+	// When using getline you must use std::ws to clear white space characters like \n from the buffer
+
+	std::cout << "What's your full name?: ";
+	std::getline(std::cin >> std::ws, name);
+
+	std::cout << "Hello " << name << '\n';
+	std::cout << "You are " << age << " years old.";
 
 	return 0;
 }

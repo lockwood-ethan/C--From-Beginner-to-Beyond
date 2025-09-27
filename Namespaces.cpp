@@ -3,7 +3,13 @@
 // Why std::cout and not just cout?
 // A: Namespaces are used to reduce the likelihood of naming conflicts
 
-using namespace std: // Use the entire std namespace
+namespace first {
+	int favorite_number {1};
+}
+
+// OR
+
+using namespace std; // Use the entire std namespace
 
 // OR
 
@@ -13,14 +19,16 @@ using std::endl;
 
 int main()
 {
-	int favorite_number;
+	int favorite_number {20};
 
-	cout << "Enter your favorite number between 1 and 100: "
+	cout << "This is the local variable: " << favorite_number << endl;
 
-	cin >> favorite_number;
+	cout << "Enter your favorite number between 1 and 100: ";
+
+	cin >> first::favorite_number;
 
 	cout << "Amazing!! That's my favorite number too!" << endl;
-	cout << "No really!!, " << favorite_number << " is my favorite number!" << endl;
+	cout << "No really!!, " << first::favorite_number << " is my favorite number!" << endl;
 
 	return 0;
 }
